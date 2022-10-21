@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -56,8 +57,13 @@ public class PlayerController : MonoBehaviour, IPlayerController
             _lastJumpPressed = Time.time;
         }
 
-        if ((isFacingRight && movementInputDirection * movementSpeed < 0) || (!isFacingRight && movementInputDirection * movementSpeed > 0))
+        if ((isFacingRight && Input.X * Velocity.x < 0) || (!isFacingRight && Input.X * Velocity.x > 0))
             Flip();
+    }
+
+    private void Flip()
+    {
+        throw new NotImplementedException();
     }
 
     #endregion
