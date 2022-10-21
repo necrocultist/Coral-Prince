@@ -63,7 +63,8 @@ public class PlayerController : MonoBehaviour, IPlayerController
 
     private void Flip()
     {
-        throw new NotImplementedException();
+        isFacingRight = !isFacingRight;
+        transform.rotation = Quaternion.Euler(0, isFacingRight ? 0 : 180, 0);
     }
 
     #endregion
