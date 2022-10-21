@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace TarodevController {
     public struct FrameInput {
         public float X;
         public bool JumpDown;
@@ -27,4 +26,3 @@ namespace TarodevController {
 
         public readonly Vector2 Start, End, Dir;
     }
-}
