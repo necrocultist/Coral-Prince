@@ -14,6 +14,9 @@ public class DashEnemyController : MonoBehaviour
     private Rigidbody2D enemyrb;
 
     private bool isFacingRight = true;
+
+    public event Action OnEnemyAttack;
+
     private void Awake()
     {
         enemyrb = GetComponent<Rigidbody2D>();
@@ -48,6 +51,7 @@ public class DashEnemyController : MonoBehaviour
     }
     public IEnumerator Timer()
     {
+        OnEnemyAttack?.Invoke();
         int sign = isFacingRight ? 1 : -1;
         
         enemyrb.velocity = new Vector2(sign * dashSpeed, enemyrb.velocity.y);

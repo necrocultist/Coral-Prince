@@ -116,7 +116,7 @@ public class PlayerController : MonoBehaviour
             Dash();
         }
 
-        if (Input.GetButtonDown("Fire1") /*&& canDash*/)
+        if (Input.GetButtonDown("Fire1"))
             OnPlayerAttack?.Invoke();
     }
 
