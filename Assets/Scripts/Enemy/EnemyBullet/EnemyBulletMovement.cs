@@ -11,7 +11,7 @@ public class EnemyBulletMovement : MonoBehaviour
     void Start()
     {
         rba = GetComponent<Rigidbody2D>();
-        Destroy(gameObject, lifeTime);
+        
     }
 
     void Update()
@@ -22,15 +22,6 @@ public class EnemyBulletMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        GameObject gameObject = other.gameObject;
-        Vector2 contactPoint = other.GetContact(0).point;
-
-        if (gameObject != null)
-        {
-            if (gameObject.TryGetComponent(out PlayerCombat player))
-            {
-                Destroy(gameObject, lifeTime);
-            }
-        }
+        Destroy(this.gameObject, lifeTime);
     }
 }
