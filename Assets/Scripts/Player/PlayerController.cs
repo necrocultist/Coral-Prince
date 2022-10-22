@@ -67,7 +67,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-        ModifyPhysics();
+            ModifyPhysics();
         }
 
         if (!doubleJumpMode)
@@ -145,7 +145,8 @@ public class PlayerController : MonoBehaviour
         isDashing = true;
         float oldGravity = rb.gravityScale;
         rb.gravityScale = 0;
-        rb.velocity = new Vector2(transform.localScale.x * dashPower, 0f);
+        rb.AddForce(dashPower * Vector2.right, ForceMode2D.Impulse);
+        //rb.velocity = new Vector2(transform.pos.x * dashPower, 0f);
         yield return new WaitForSeconds(dashTime);
         rb.gravityScale = oldGravity;
         isDashing = false;
