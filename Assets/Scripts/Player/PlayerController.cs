@@ -8,13 +8,19 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float moveSpeed;
     private float movementDirection;
     private bool facingRight = true;
+    private bool canMove = true;
+    private bool canFlip = true;
 
     [Header("Dash")]
-    private bool canDash = true;
     private bool isDashing;
-    private float dashPower = 24f;
-    private float dashTime = 0.2f;
-    private float dashCooldown = 1f;
+
+    [SerializeField] private float dashTime = 0.2f;
+    [SerializeField] private float dashSpeed = 14f;
+    [SerializeField] private float distanceBetweenImages = 0.1f;
+    [SerializeField] private float dashCoolDown = 2.5f;
+    private float dashTimeLeft;
+    private float LastImageXpos;
+    private float lastDash = -100;
 
     [Header("Ground Check")]
     private bool isPlayerGrounded;
@@ -30,7 +36,6 @@ public class PlayerController : MonoBehaviour
     public bool doubleJumpMode = false;
 
     [Header("Physics")]
-    [SerializeField] private float maxSpeed = 7f;
     [SerializeField] private float linearDrag = 2f;
     [SerializeField] private float gravity = 1;
     [SerializeField] private float fallMultiplier = 4f;
@@ -54,21 +59,19 @@ public class PlayerController : MonoBehaviour
         {
             jumpTimer = Time.time + jumpDelay;
         }
+
+        CheckDash();
     }
 
     private void FixedUpdate()
     {
-        MovePlayer(movementDirection);
+        if (canMove)
+            MovePlayer(movementDirection);
 
 
-        if (isDashing)
-        {
-            return;
-        }
-        else
-        {
-            ModifyPhysics();
-        }
+
+        ModifyPhysics();
+
 
         if (!doubleJumpMode)
         {
@@ -106,27 +109,62 @@ public class PlayerController : MonoBehaviour
 
         OnGroundCheck();
 
-        if(Input.GetButtonDown("Dash") && canDash)
+        if (Input.GetButtonDown("Dash") && Time.time >= (lastDash + dashCoolDown))
         {
             OnPlayerDash?.Invoke();
-            StartCoroutine(Dash());
+            //StartCoroutine(Dash());
+            Dash();
         }
 
-        if (Input.GetButtonDown("Fire1") && canDash)
+        if (Input.GetButtonDown("Fire1") /*&& canDash*/)
             OnPlayerAttack?.Invoke();
-      }
+    }
+
+    private void Dash()
+    {
+        isDashing = true;
+        dashTimeLeft = dashTime;
+        lastDash = Time.time;
+
+        PlayerAfterImagePool.Instance.GetFromPool();
+        LastImageXpos = transform.position.x;
+    }
+
+    private void CheckDash()
+    {
+        if (isDashing)
+        {
+            if (dashTimeLeft > 0)
+            {
+                canMove = false;
+                canFlip = false;
+
+                rb.velocity = new Vector2(dashSpeed * movementDirection, rb.velocity.y);
+                dashTimeLeft -= Time.deltaTime;
+
+                if (Mathf.Abs(transform.position.x - LastImageXpos) > distanceBetweenImages)
+                {
+                    PlayerAfterImagePool.Instance.GetFromPool();
+                    LastImageXpos = transform.position.x;
+                }
+            }
+            if (dashTimeLeft <= 0)
+            {
+                Debug.Log("a");
+                isDashing = false;
+                canMove = true;
+                canFlip = true;
+            }
+        }
+    }
+
 
     private void MovePlayer(float direction)
     {
-        if ((direction * moveSpeed < 0 && facingRight) || (direction * moveSpeed > 0 && !facingRight)) FlipFace();
+        if (((direction * moveSpeed < 0 && facingRight) || (direction * moveSpeed > 0 && !facingRight)) && canFlip)
+            FlipFace();
 
-        //rb.AddForce(direction.x * moveSpeed * Vector2.right);
         rb.velocity = new Vector2(direction * moveSpeed, rb.velocity.y);
-
-        //if (Mathf.Abs(rb.velocity.x) > maxSpeed)
-        //{
-        //    rb.velocity = new Vector2(Mathf.Sign(rb.velocity.x) * maxSpeed, rb.velocity.y);
-        //}
     }
 
     private void Jump()
@@ -137,21 +175,6 @@ public class PlayerController : MonoBehaviour
         jumpTimer = 0;
 
         OnPlayerJump?.Invoke();
-    }
-
-    private IEnumerator Dash()
-    {
-        canDash = false;
-        isDashing = true;
-        float oldGravity = rb.gravityScale;
-        rb.gravityScale = 0;
-        rb.AddForce(dashPower * Vector2.right, ForceMode2D.Impulse);
-        //rb.velocity = new Vector2(transform.pos.x * dashPower, 0f);
-        yield return new WaitForSeconds(dashTime);
-        rb.gravityScale = oldGravity;
-        isDashing = false;
-        yield return new WaitForSeconds(dashCooldown);
-        canDash = true;
     }
 
     private void FlipFace()
