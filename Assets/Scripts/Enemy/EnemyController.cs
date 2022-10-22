@@ -144,9 +144,9 @@ public class EnemyController : MonoBehaviour
             isFacingRight = true;
             transform.rotation = Quaternion.Euler(0,0,0);
         }
-           
         var dist = Vector2.Distance(transform.position, player.transform.position);
-        if (attackRange < Vector2.Distance(transform.position, player.transform.position) &&Vector2.Distance(transform.position, player.transform.position)< agroRange)
+        
+        if (attackRange < dist && dist< agroRange)
         {
             transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
         }
@@ -159,26 +159,13 @@ public class EnemyController : MonoBehaviour
             enemyrb.velocity = Vector2.zero;
         }
     }
-
- 
-
-   
-
     IEnumerator Timer()
     {
-        if (isFacingRight)
-        {
-            enemyrb.velocity = new Vector2(dashSpeed, enemyrb.velocity.y);
-            yield return new WaitForSeconds(0.5f);
-            enemyrb.velocity = new Vector2(moveSpeed, enemyrb.velocity.y);
-        }
-        else
-        {
-            //transform.Rotate(0,180,0);
-            enemyrb.velocity = new Vector2(-dashSpeed, enemyrb.velocity.y);
-            yield return new WaitForSeconds(0.5f);
-            enemyrb.velocity = new Vector2(-moveSpeed, enemyrb.velocity.y);
-        }
+        int sign = isFacingRight ? 1 : -1;
+        
+        enemyrb.velocity = new Vector2(sign * dashSpeed, enemyrb.velocity.y);
+        yield return new WaitForSeconds(0.5f);
+        enemyrb.velocity = new Vector2(sign * moveSpeed, enemyrb.velocity.y);
         
     }
 }
