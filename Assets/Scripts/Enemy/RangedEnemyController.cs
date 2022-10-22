@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,9 +10,14 @@ public class RangedEnemyController : MonoBehaviour
     [SerializeField] private float attackRange;
     [SerializeField] private float moveSpeed;
     [SerializeField] private float dashSpeed;
-    private Rigidbody2D enemyrb;
 
-    private bool isFacingRight = true;
+    private Rigidbody2D enemyrb;
+    
+    public event Action OnEnemyShoot;
+
+
+    public bool isFacingRight = true;
+ 
     private void Awake()
     {
         enemyrb = GetComponent<Rigidbody2D>();
@@ -37,20 +43,12 @@ public class RangedEnemyController : MonoBehaviour
         }
         else if (dist < attackRange)
         {
-            StartCoroutine(Timer());
+            OnEnemyShoot?.Invoke();
         }
         else
         {
             enemyrb.velocity = Vector2.zero;
         }
     }
-    public IEnumerator Timer()
-    {
-        int sign = isFacingRight ? 1 : -1;
-        
-        enemyrb.velocity = new Vector2(sign * dashSpeed, enemyrb.velocity.y);
-        yield return new WaitForSeconds(0.5f);
-        enemyrb.velocity = new Vector2(sign * moveSpeed, enemyrb.velocity.y);
-        
-    }
+    
 }
