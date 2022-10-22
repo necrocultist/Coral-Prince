@@ -10,7 +10,7 @@ public class EnemyBulletSpawner : MonoBehaviour
     [SerializeField] private RangedEnemyController _enemyController;
     [SerializeField] private float bulletSpeed;
 
-    private float myTime = 0.0F;
+    private float myTime = 0.5F;
     private float fireDelta = 0.5F;
     
     private void OnEnable()
