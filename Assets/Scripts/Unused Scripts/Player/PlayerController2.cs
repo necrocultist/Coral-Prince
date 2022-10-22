@@ -8,6 +8,14 @@ public class PlayerController2 : MonoBehaviour
     [SerializeField] private float moveSpeed;
     private Vector2 inputDir;
     private bool facingRight = true;
+    private bool isDashing;
+    [SerializeField] private float dashTime;
+    [SerializeField] private float dashSpeed;
+    [SerializeField] private float distanceBetweenImages;
+    [SerializeField] private float dashCooldown;
+    [SerializeField] private float dashTimeLeft;
+    [SerializeField] private float lastImageXpos;
+    [SerializeField] private float lastDash = -100f;
 
     [Header("Ground Check")]
     private bool isPlayerGrounded;
@@ -84,6 +92,23 @@ public class PlayerController2 : MonoBehaviour
         inputDir = new Vector2(Input.GetAxisRaw("Horizontal"), 0);
 
         OnGroundCheck();
+
+        DashCheck();
+    }
+
+    private void DashCheck()
+    {
+        if (Input.GetButtonDown("Dash"))
+        {
+            if(Time.time >= (lastDash + dashCooldown))
+            {
+                isDashing = true;
+                dashTimeLeft = dashTime;
+                lastDash = Time.time;
+
+                PlayerAfterImagePool.Instance
+            }
+        }
     }
 
     private void MovePlayer(Vector2 direction)
