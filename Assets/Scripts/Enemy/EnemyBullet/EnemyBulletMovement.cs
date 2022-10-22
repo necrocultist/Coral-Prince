@@ -20,4 +20,17 @@ public class EnemyBulletMovement : MonoBehaviour
         transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, angle);
     }
 
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        GameObject gameObject = other.gameObject;
+        Vector2 contactPoint = other.GetContact(0).point;
+
+        if (gameObject != null)
+        {
+            if (gameObject.TryGetComponent(out PlayerCombat player))
+            {
+                Destroy(gameObject, lifeTime);
+            }
+        }
+    }
 }
