@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerAnim : MonoBehaviour
 {
-    private PlayerHealth health;
+    private PlayerCombat combat;
     private PlayerController controller;
     private Rigidbody2D rigidBody;
     private Animator animator;
@@ -16,23 +16,25 @@ public class PlayerAnim : MonoBehaviour
     {
         rigidBody = GetComponentInParent<Rigidbody2D>();
         animator = GetComponentInParent<Animator>();
-        health = GetComponentInParent<PlayerHealth>();
+        combat = GetComponentInParent<PlayerCombat>();
         controller = GetComponentInParent<PlayerController>();
     }
 
     private void OnEnable()
     {
-        health.OnPlayerHealthDecrease += HitAnim;
         controller.OnPlayerJump += JumpAnim;
-        health.OnPlayerDeath += DeathAnim;
+        controller.OnPlayerAttack += AttackAnim;
+        combat.OnPlayerHealthDecrease += HitAnim;
+        combat.OnPlayerDeath += DeathAnim;
     }
 
 
     private void OnDisable()
     {
-        health.OnPlayerHealthDecrease -= HitAnim;
-        health.OnPlayerDeath -= DeathAnim;
-        health.OnPlayerDeath -= DeathAnim;
+        combat.OnPlayerHealthDecrease -= HitAnim;
+        controller.OnPlayerAttack -= AttackAnim;
+        combat.OnPlayerDeath -= DeathAnim;
+        combat.OnPlayerDeath -= DeathAnim;
     }
 
     private void Update()
@@ -57,5 +59,10 @@ public class PlayerAnim : MonoBehaviour
     private void DeathAnim()
     {
         animator.SetTrigger("Death");
+    }
+
+    private void AttackAnim()
+    {
+        animator.SetTrigger("Attack");
     }
 }

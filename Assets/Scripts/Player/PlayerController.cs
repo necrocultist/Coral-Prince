@@ -37,6 +37,9 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
 
     public event Action OnPlayerJump;
+    public event Action OnPlayerAttack;
+    public event Action OnPlayerDash;
+
 
     private void Awake()
     {
@@ -104,8 +107,14 @@ public class PlayerController : MonoBehaviour
         OnGroundCheck();
 
         if(Input.GetButtonDown("Dash") && canDash)
+        {
+            OnPlayerDash?.Invoke();
             StartCoroutine(Dash());
-    }
+        }
+
+        if (Input.GetButtonDown("Fire1") && canDash)
+            OnPlayerAttack?.Invoke();
+      }
 
     private void MovePlayer(float direction)
     {

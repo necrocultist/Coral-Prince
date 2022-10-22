@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnemyHealth : CharacterHealth
+public class EnemyCombat : CharacterCombat
 {
     public void DecraseHealth(int damage)
     {

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public abstract class CharacterHealth : MonoBehaviour
+public abstract class CharacterCombat : MonoBehaviour
 {
     [SerializeField] protected int maxHealth;
     [SerializeField] protected int currentHealth;
