@@ -2544,6 +2544,7 @@ GameObject:
   - component: {fileID: 888407235}
   - component: {fileID: 888407234}
   - component: {fileID: 888407238}
+  - component: {fileID: 888407239}
   m_Layer: 7
   m_Name: Boss
   m_TagString: Untagged
@@ -2561,7 +2562,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -2658,6 +2659,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 300
   currentHealth: 300
+  gm: {fileID: 1473380869}
+--- !u!114 &888407239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 888407233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 516a8795a7de15a49b9e29f17b621cb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 2032338563}
 --- !u!1 &947400450
 GameObject:
   m_ObjectHideFlags: 0
