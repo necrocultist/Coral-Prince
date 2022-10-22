@@ -2403,11 +2403,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1742904551691039807, guid: 00b01290c887ad54e8789f50e8a5221a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.15
+      value: -2.67
       objectReference: {fileID: 0}
     - target: {fileID: 1742904551691039807, guid: 00b01290c887ad54e8789f50e8a5221a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.1
+      value: 3.1
       objectReference: {fileID: 0}
     - target: {fileID: 1742904551691039807, guid: 00b01290c887ad54e8789f50e8a5221a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3002,6 +3002,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1473380868}
   - component: {fileID: 1473380867}
+  - component: {fileID: 1473380869}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -3036,6 +3037,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1473380869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1473380866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f21f448ff25ace45b297528fd684f6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentState: 3
+  losePanel: {fileID: 487227433}
+  winPanel: {fileID: 621139566}
+  pc: {fileID: 2032338566}
 --- !u!1 &1581998283
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,6 +9,7 @@ public class PlayerCombat : CharacterCombat
     [SerializeField] private Transform attackPoint;
     [SerializeField] private LayerMask enemyLayer;
     [SerializeField] private float attackRange;
+    [SerializeField] private GameManager gm;
 
     private PlayerController controller;
     private Collider2D collider;
@@ -41,6 +42,7 @@ public class PlayerCombat : CharacterCombat
         {
             OnPlayerDeath?.Invoke();
             Destroy(gameObject, 0.5f);
+            gm.currentState = States.Failed;
         }
         else
         {
