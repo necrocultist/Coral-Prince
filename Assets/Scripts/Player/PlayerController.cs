@@ -150,7 +150,6 @@ public class PlayerController : MonoBehaviour
             }
             if (dashTimeLeft <= 0)
             {
-                Debug.Log("a");
                 isDashing = false;
                 canMove = true;
                 canFlip = true;
