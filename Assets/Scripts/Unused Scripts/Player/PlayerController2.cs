@@ -13,9 +13,9 @@ public class PlayerController2 : MonoBehaviour
     [SerializeField] private float dashSpeed;
     [SerializeField] private float distanceBetweenImages;
     [SerializeField] private float dashCooldown;
-    [SerializeField] private float dashTimeLeft;
-    [SerializeField] private float lastImageXpos;
-    [SerializeField] private float lastDash = -100f;
+    private float dashTimeLeft;
+    private float lastImageXpos;
+    private float lastDash = -100f;
 
     [Header("Ground Check")]
     private bool isPlayerGrounded;
@@ -93,22 +93,7 @@ public class PlayerController2 : MonoBehaviour
 
         OnGroundCheck();
 
-        DashCheck();
-    }
-
-    private void DashCheck()
-    {
-        if (Input.GetButtonDown("Dash"))
-        {
-            if(Time.time >= (lastDash + dashCooldown))
-            {
-                isDashing = true;
-                dashTimeLeft = dashTime;
-                lastDash = Time.time;
-
-                PlayerAfterImagePool.Instance
-            }
-        }
+        Dash();
     }
 
     private void MovePlayer(Vector2 direction)
@@ -129,6 +114,22 @@ public class PlayerController2 : MonoBehaviour
 
         rb.AddForce(jumpSpeed * Vector2.up, ForceMode2D.Impulse);
         jumpTimer = 0;
+    }
+
+    private void Dash()
+    {
+        if (Input.GetButtonDown("Dash"))
+        {
+            if (Time.time >= (lastDash + dashCooldown))
+            {
+                isDashing = true;
+                dashTimeLeft = dashTime;
+                lastDash = Time.time;
+
+                PlayerAfterImagePool.Instance.GetFromPool();
+                lastImageXpos = transform.position.x;
+            }
+        }
     }
 
     private void FlipFace()
@@ -188,5 +189,26 @@ public class PlayerController2 : MonoBehaviour
         Gizmos.DrawLine(transform.position + colliderOffset, transform.position + colliderOffset + (Vector3.down * groundCheckDistance));
         Gizmos.DrawLine(transform.position - colliderOffset, transform.position - colliderOffset + (Vector3.down * groundCheckDistance));
     }
+
+    private void DashCheck()
+    {
+        if (isDashing)
+        {
+            rb.velocity = new Vector2(dashSpeed * inputDir.x * Time.deltaTime, rb.velocity.y);
+            dashTimeLeft -= Time.deltaTime;
+
+            if(Mathf.Abs(transform.position.x - lastImageXpos) > distanceBetweenImages)
+            {
+                PlayerAfterImagePool.Instance.GetFromPool();
+                lastImageXpos = transform.position.x;
+            }
+
+            if(dashTimeLeft <= 0)
+            {
+                isDashing = false;
+            }
+        }
+    }
+
     #endregion
 }
