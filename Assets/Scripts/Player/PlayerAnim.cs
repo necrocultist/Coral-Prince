@@ -24,6 +24,7 @@ public class PlayerAnim : MonoBehaviour
     {
         controller.OnPlayerJump += JumpAnim;
         controller.OnPlayerAttack += AttackAnim;
+        controller.OnPlayerDash += DashAnim;
         combat.OnPlayerHealthDecrease += HitAnim;
         combat.OnPlayerDeath += DeathAnim;
     }
@@ -33,6 +34,7 @@ public class PlayerAnim : MonoBehaviour
     {
         combat.OnPlayerHealthDecrease -= HitAnim;
         controller.OnPlayerAttack -= AttackAnim;
+        controller.OnPlayerDash += DashAnim;
         combat.OnPlayerDeath -= DeathAnim;
         combat.OnPlayerDeath -= DeathAnim;
     }
@@ -64,5 +66,9 @@ public class PlayerAnim : MonoBehaviour
     private void AttackAnim()
     {
         animator.SetTrigger("Attack");
+    }
+    private void DashAnim()
+    {
+        animator.SetTrigger("Dash");
     }
 }

@@ -1919,11 +1919,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4905552738077074242, guid: c6a4b13292ee09e41946a08bff657f94, type: 3}
       propertyPath: m_Name
-      value: Enemy2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4905552738077074242, guid: c6a4b13292ee09e41946a08bff657f94, type: 3}
-      propertyPath: m_IsActive
-      value: 0
+      value: Ranged Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 4905552738077074246, guid: c6a4b13292ee09e41946a08bff657f94, type: 3}
       propertyPath: m_RootOrder
@@ -2096,7 +2092,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7787124467304503349, guid: 2f6ff447293f87c4ba2e5241a9f815fc, type: 3}
       propertyPath: m_Name
-      value: Enemy1
+      value: Dash Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 7787124467304503358, guid: 2f6ff447293f87c4ba2e5241a9f815fc, type: 3}
       propertyPath: player
