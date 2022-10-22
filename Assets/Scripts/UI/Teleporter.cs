@@ -9,11 +9,11 @@ public class Teleporter : MonoBehaviour
     [SerializeField] private GameObject[] arr;
     private void Update()
     {
-        if (transform.position.x > 9f && transform.position.x < 26.6f)
+        if (transform.position.x > 9f && transform.position.x < 28.5f)
         {
             GameObject.Find("Main Camera").transform.position = new Vector3(arr[0].transform.position.x,0,-10);
         }
-        else if (transform.position.x > 26.6f)
+        else if (transform.position.x > 28f)
         {
             GameObject.Find("Main Camera").transform.position = new Vector3(arr[1].transform.position.x,0,-10);
         }
