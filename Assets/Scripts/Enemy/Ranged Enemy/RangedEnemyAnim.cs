@@ -42,7 +42,7 @@ public class RangedEnemyAnim : MonoBehaviour
 
     private void Update()
     {
-        IdleRunAnims();
+        //IdleRunAnims();
     }
 
     private void IdleRunAnims()

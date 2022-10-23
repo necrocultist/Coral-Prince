@@ -27,12 +27,12 @@ public class DashEnemyController : MonoBehaviour
     void Update()
     {
         enemyAttack = false;
-        if (transform.position.x > player.transform.position.x)
+        if (transform.position.x > player.transform.position.x && player != null)
         {
             isFacingRight = false;
             transform.rotation = Quaternion.Euler(0,180,0);
         }
-        else
+        else if(player != null)
         {
             isFacingRight = true;
             transform.rotation = Quaternion.Euler(0,0,0);
