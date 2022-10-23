@@ -7833,7 +7833,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7787124467304503344, guid: 2f6ff447293f87c4ba2e5241a9f815fc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.22
+      value: -5.41
       objectReference: {fileID: 0}
     - target: {fileID: 7787124467304503344, guid: 2f6ff447293f87c4ba2e5241a9f815fc, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8111,6 +8111,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   crew: {fileID: 0}
   story: {fileID: 0}
+  storySound: {fileID: 0}
 --- !u!4 &1473380868
 Transform:
   m_ObjectHideFlags: 0
