@@ -228,7 +228,7 @@ MonoBehaviour:
   dashTime: 0.2
   dashSpeed: 14
   distanceBetweenImages: 0.1
-  dashCoolDown: 2.5
+  dashCoolDown: 0.5
   groundCheckDistance: 0.96
   colliderOffset: {x: 0.42, y: 0, z: 0}
   groundCheckLayer:
