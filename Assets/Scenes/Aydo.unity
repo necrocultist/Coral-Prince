@@ -694,14 +694,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 404393345}
     m_Modifications:
-    - target: {fileID: 11746315, guid: c6a4b13292ee09e41946a08bff657f94, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: d98c31507c7a8d44d9c303f1b510da52, type: 2}
-    - target: {fileID: 4905552738077074241, guid: c6a4b13292ee09e41946a08bff657f94, type: 3}
-      propertyPath: m_SortingOrder
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 4905552738077074242, guid: c6a4b13292ee09e41946a08bff657f94, type: 3}
       propertyPath: m_Name
       value: Ranged Enemy (3)
@@ -1219,14 +1211,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 404393345}
     m_Modifications:
-    - target: {fileID: 11746315, guid: c6a4b13292ee09e41946a08bff657f94, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: d98c31507c7a8d44d9c303f1b510da52, type: 2}
-    - target: {fileID: 4905552738077074241, guid: c6a4b13292ee09e41946a08bff657f94, type: 3}
-      propertyPath: m_SortingOrder
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 4905552738077074242, guid: c6a4b13292ee09e41946a08bff657f94, type: 3}
       propertyPath: m_Name
       value: Ranged Enemy
@@ -2780,14 +2764,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 404393345}
     m_Modifications:
-    - target: {fileID: 11746315, guid: c6a4b13292ee09e41946a08bff657f94, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: d98c31507c7a8d44d9c303f1b510da52, type: 2}
-    - target: {fileID: 4905552738077074241, guid: c6a4b13292ee09e41946a08bff657f94, type: 3}
-      propertyPath: m_SortingOrder
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 4905552738077074242, guid: c6a4b13292ee09e41946a08bff657f94, type: 3}
       propertyPath: m_Name
       value: Ranged Enemy (1)
@@ -3528,6 +3504,14 @@ PrefabInstance:
       propertyPath: gm
       value: 
       objectReference: {fileID: 1473380869}
+    - target: {fileID: 3592713164492524892, guid: 8886fe38a6b70194093a81a78350757d, type: 3}
+      propertyPath: maxHealth
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 3592713164492524892, guid: 8886fe38a6b70194093a81a78350757d, type: 3}
+      propertyPath: currentHealth
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 3592713164492524893, guid: 8886fe38a6b70194093a81a78350757d, type: 3}
       propertyPath: player
       value: 
@@ -4662,10 +4646,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7787124467304503347, guid: 2f6ff447293f87c4ba2e5241a9f815fc, type: 3}
-      propertyPath: m_SortingOrder
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 7787124467304503349, guid: 2f6ff447293f87c4ba2e5241a9f815fc, type: 3}
       propertyPath: m_Name
       value: Dash Enemy
@@ -4674,6 +4654,10 @@ PrefabInstance:
       propertyPath: gm
       value: 
       objectReference: {fileID: 1473380869}
+    - target: {fileID: 7787124467304503356, guid: 2f6ff447293f87c4ba2e5241a9f815fc, type: 3}
+      propertyPath: maxHealth
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 7787124467304503358, guid: 2f6ff447293f87c4ba2e5241a9f815fc, type: 3}
       propertyPath: player
       value: 
@@ -4687,14 +4671,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 404393345}
     m_Modifications:
-    - target: {fileID: 11746315, guid: c6a4b13292ee09e41946a08bff657f94, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: d98c31507c7a8d44d9c303f1b510da52, type: 2}
-    - target: {fileID: 4905552738077074241, guid: c6a4b13292ee09e41946a08bff657f94, type: 3}
-      propertyPath: m_SortingOrder
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 4905552738077074242, guid: c6a4b13292ee09e41946a08bff657f94, type: 3}
       propertyPath: m_Name
       value: Ranged Enemy (4)
@@ -5945,10 +5921,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7787124467304503347, guid: 2f6ff447293f87c4ba2e5241a9f815fc, type: 3}
-      propertyPath: m_SortingOrder
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 7787124467304503349, guid: 2f6ff447293f87c4ba2e5241a9f815fc, type: 3}
       propertyPath: m_Name
       value: Dash Enemy (3)
@@ -5957,6 +5929,10 @@ PrefabInstance:
       propertyPath: gm
       value: 
       objectReference: {fileID: 1473380869}
+    - target: {fileID: 7787124467304503356, guid: 2f6ff447293f87c4ba2e5241a9f815fc, type: 3}
+      propertyPath: maxHealth
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 7787124467304503358, guid: 2f6ff447293f87c4ba2e5241a9f815fc, type: 3}
       propertyPath: player
       value: 
@@ -6200,6 +6176,26 @@ PrefabInstance:
       propertyPath: gm
       value: 
       objectReference: {fileID: 1473380869}
+    - target: {fileID: 1742904551691039802, guid: 00b01290c887ad54e8789f50e8a5221a, type: 3}
+      propertyPath: maxHealth
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1742904551691039802, guid: 00b01290c887ad54e8789f50e8a5221a, type: 3}
+      propertyPath: attackRange
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1742904551691039802, guid: 00b01290c887ad54e8789f50e8a5221a, type: 3}
+      propertyPath: enemyDamage
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1742904551691039802, guid: 00b01290c887ad54e8789f50e8a5221a, type: 3}
+      propertyPath: playerDamage
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1742904551691039802, guid: 00b01290c887ad54e8789f50e8a5221a, type: 3}
+      propertyPath: currentHealth
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 1742904551691039803, guid: 00b01290c887ad54e8789f50e8a5221a, type: 3}
       propertyPath: dashSpeed
       value: 15
@@ -6256,6 +6252,14 @@ PrefabInstance:
       propertyPath: camera
       value: 
       objectReference: {fileID: 1356221169}
+    - target: {fileID: 3074462426774007107, guid: 00b01290c887ad54e8789f50e8a5221a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.552
+      objectReference: {fileID: 0}
+    - target: {fileID: 3074462426774007107, guid: 00b01290c887ad54e8789f50e8a5221a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.638
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00b01290c887ad54e8789f50e8a5221a, type: 3}
 --- !u!1 &1194246619
@@ -7197,10 +7201,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7787124467304503347, guid: 2f6ff447293f87c4ba2e5241a9f815fc, type: 3}
-      propertyPath: m_SortingOrder
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 7787124467304503349, guid: 2f6ff447293f87c4ba2e5241a9f815fc, type: 3}
       propertyPath: m_Name
       value: Dash Enemy (2)
@@ -7209,6 +7209,10 @@ PrefabInstance:
       propertyPath: gm
       value: 
       objectReference: {fileID: 1473380869}
+    - target: {fileID: 7787124467304503356, guid: 2f6ff447293f87c4ba2e5241a9f815fc, type: 3}
+      propertyPath: maxHealth
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 7787124467304503358, guid: 2f6ff447293f87c4ba2e5241a9f815fc, type: 3}
       propertyPath: player
       value: 
@@ -7380,14 +7384,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 404393345}
     m_Modifications:
-    - target: {fileID: 11746315, guid: c6a4b13292ee09e41946a08bff657f94, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: d98c31507c7a8d44d9c303f1b510da52, type: 2}
-    - target: {fileID: 4905552738077074241, guid: c6a4b13292ee09e41946a08bff657f94, type: 3}
-      propertyPath: m_SortingOrder
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 4905552738077074242, guid: c6a4b13292ee09e41946a08bff657f94, type: 3}
       propertyPath: m_Name
       value: Enemy2 (1)
@@ -7871,10 +7867,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7787124467304503347, guid: 2f6ff447293f87c4ba2e5241a9f815fc, type: 3}
-      propertyPath: m_SortingOrder
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 7787124467304503349, guid: 2f6ff447293f87c4ba2e5241a9f815fc, type: 3}
       propertyPath: m_Name
       value: Dash Enemy (1)
@@ -7883,6 +7875,10 @@ PrefabInstance:
       propertyPath: gm
       value: 
       objectReference: {fileID: 1473380869}
+    - target: {fileID: 7787124467304503356, guid: 2f6ff447293f87c4ba2e5241a9f815fc, type: 3}
+      propertyPath: maxHealth
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 7787124467304503358, guid: 2f6ff447293f87c4ba2e5241a9f815fc, type: 3}
       propertyPath: player
       value: 
@@ -10561,14 +10557,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 404393345}
     m_Modifications:
-    - target: {fileID: 11746315, guid: c6a4b13292ee09e41946a08bff657f94, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: d98c31507c7a8d44d9c303f1b510da52, type: 2}
-    - target: {fileID: 4905552738077074241, guid: c6a4b13292ee09e41946a08bff657f94, type: 3}
-      propertyPath: m_SortingOrder
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 4905552738077074242, guid: c6a4b13292ee09e41946a08bff657f94, type: 3}
       propertyPath: m_Name
       value: Ranged Enemy (2)
@@ -11616,14 +11604,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 404393345}
     m_Modifications:
-    - target: {fileID: 11746315, guid: c6a4b13292ee09e41946a08bff657f94, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: d98c31507c7a8d44d9c303f1b510da52, type: 2}
-    - target: {fileID: 4905552738077074241, guid: c6a4b13292ee09e41946a08bff657f94, type: 3}
-      propertyPath: m_SortingOrder
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 4905552738077074242, guid: c6a4b13292ee09e41946a08bff657f94, type: 3}
       propertyPath: m_Name
       value: Enemy2
@@ -11741,6 +11721,10 @@ PrefabInstance:
       propertyPath: gm
       value: 
       objectReference: {fileID: 1473380869}
+    - target: {fileID: 7787124467304503356, guid: 2f6ff447293f87c4ba2e5241a9f815fc, type: 3}
+      propertyPath: maxHealth
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 7787124467304503358, guid: 2f6ff447293f87c4ba2e5241a9f815fc, type: 3}
       propertyPath: player
       value: 

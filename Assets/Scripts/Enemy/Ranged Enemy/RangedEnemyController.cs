@@ -25,29 +25,32 @@ public class RangedEnemyController : MonoBehaviour
 
     void Update()
     {
-        if (transform.position.x > player.transform.position.x && player != null)
+        if(player != null)
         {
-            isFacingRight = false;
-            transform.rotation = Quaternion.Euler(0,180,0);
-        }
-        else if (player != null)
-        {
-            isFacingRight = true;
-            transform.rotation = Quaternion.Euler(0,0,0);
-        }
-        var dist = Vector2.Distance(transform.position, player.transform.position);
+            if (transform.position.x > player.transform.position.x)
+            {
+                isFacingRight = false;
+                transform.rotation = Quaternion.Euler(0,180,0);
+            }
+            else
+            {
+                isFacingRight = true;
+                transform.rotation = Quaternion.Euler(0,0,0);
+            }
+            var dist = Vector2.Distance(transform.position, player.transform.position);
         
-        if (attackRange < dist && dist< agroRange)
-        {
-            transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
-        }
-        else if (dist < attackRange)
-        {
-            OnEnemyShoot?.Invoke();
-        }
-        else
-        {
-            enemyrb.velocity = Vector2.zero;
+            if (attackRange < dist && dist< agroRange)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
+            }
+            else if (dist < attackRange)
+            {
+                OnEnemyShoot?.Invoke();
+            }
+            else
+            {
+                enemyrb.velocity = Vector2.zero;
+            }
         }
     }
     
