@@ -12,6 +12,8 @@ public class DashEnemyController : MonoBehaviour
     [SerializeField] private float moveSpeed;
     [SerializeField] private float dashSpeed;
     private Rigidbody2D enemyrb;
+    private bool enemyAttack;
+    [SerializeField] Animator animator;
 
     private bool isFacingRight = true;
 
@@ -24,6 +26,7 @@ public class DashEnemyController : MonoBehaviour
 
     void Update()
     {
+        enemyAttack = false;
         if (transform.position.x > player.transform.position.x)
         {
             isFacingRight = false;
@@ -51,7 +54,7 @@ public class DashEnemyController : MonoBehaviour
     }
     public IEnumerator Timer()
     {
-        OnEnemyAttack?.Invoke();
+        animator.SetTrigger("Attack");
         int sign = isFacingRight ? 1 : -1;
         
         enemyrb.velocity = new Vector2(sign * dashSpeed, enemyrb.velocity.y);

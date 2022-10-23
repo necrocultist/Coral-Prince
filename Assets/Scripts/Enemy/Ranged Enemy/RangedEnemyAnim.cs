@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class RangedEnemyAnim : MonoBehaviour
@@ -34,6 +35,11 @@ public class RangedEnemyAnim : MonoBehaviour
         //combat.OnPlayerDeath -= DeathAnim;
     }
 
+    private void AttackAnim()
+    {
+        StartCoroutine(IEAttackAnim());
+    }
+
     private void Update()
     {
         IdleRunAnims();
@@ -54,8 +60,9 @@ public class RangedEnemyAnim : MonoBehaviour
     //    animator.SetTrigger("Death");
     //}
 
-    private void AttackAnim()
+    IEnumerator IEAttackAnim()
     {
         animator.SetTrigger("Attack");
+        yield return new WaitForSeconds(1);
     }
 }

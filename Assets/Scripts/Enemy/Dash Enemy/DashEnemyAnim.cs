@@ -21,7 +21,7 @@ public class DashEnemyAnim : MonoBehaviour
 
     private void OnEnable()
     {
-        controller.OnEnemyAttack += AttackAnim;
+        //controller.OnEnemyAttack += AttackAnim;
         combat.OnEnemyHealthDecrease += HitAnim;
         //combat.OnPlayerDeath += DeathAnim;
     }
@@ -29,9 +29,14 @@ public class DashEnemyAnim : MonoBehaviour
 
     private void OnDisable()
     {
-        controller.OnEnemyAttack -= AttackAnim;
+        //controller.OnEnemyAttack -= AttackAnim;
         combat.OnEnemyHealthDecrease -= HitAnim;
         //combat.OnPlayerDeath -= DeathAnim;
+    }
+
+    private void AttackAnim()
+    {
+       
     }
 
     private void Update()
@@ -53,9 +58,5 @@ public class DashEnemyAnim : MonoBehaviour
     //{
     //    animator.SetTrigger("Death");
     //}
-
-    private void AttackAnim()
-    {
-        animator.SetTrigger("Attack");
-    }
+    
 }
