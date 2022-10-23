@@ -8,6 +8,8 @@ public class StartGame : MonoBehaviour
 {
     [SerializeField] private GameObject crew;
     [SerializeField] private GameObject story;
+
+    [SerializeField] private AudioSource storySound;
     public void PlayGame()
     {
         SceneManager.LoadScene(1);
@@ -28,11 +30,13 @@ public class StartGame : MonoBehaviour
     }  
     public void OpenStory()
     {
+        storySound.Play();
         story.SetActive(true);
     }
 
     public void CloseStory()
     {
+        storySound.Stop();
         story.SetActive(false);
     }
 }
