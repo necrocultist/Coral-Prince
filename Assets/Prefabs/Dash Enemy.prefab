@@ -279,9 +279,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  agroRange: 4
-  attackRange: 3
-  moveSpeed: 1
+  agroRange: 6
+  attackRange: 4
+  moveSpeed: 2
   dashSpeed: 6
 --- !u!114 &7787124467304503356
 MonoBehaviour:

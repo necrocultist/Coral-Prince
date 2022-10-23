@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 5811699781103347328}
   - component: {fileID: 4905552738077074247}
   - component: {fileID: 4905552738077074244}
-  - component: {fileID: 1692953983}
+  - component: {fileID: 11746315}
   m_Layer: 7
   m_Name: Ranged Enemy
   m_TagString: Untagged
@@ -245,7 +245,7 @@ MonoBehaviour:
   player: {fileID: 0}
   agroRange: 4
   attackRange: 3
-  moveSpeed: 1
+  moveSpeed: 2
   dashSpeed: 3
   isFacingRight: 1
 --- !u!114 &4905552738077074244
@@ -263,7 +263,7 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 100
   gm: {fileID: 0}
---- !u!95 &1692953983
+--- !u!95 &11746315
 Animator:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -273,7 +273,7 @@ Animator:
   m_GameObject: {fileID: 4905552738077074242}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d98c31507c7a8d44d9c303f1b510da52, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
