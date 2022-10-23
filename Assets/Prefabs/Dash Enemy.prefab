@@ -195,9 +195,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   agroRange: 6
-  attackRange: 4
-  moveSpeed: 2
-  dashSpeed: 6
+  attackRange: 3
+  moveSpeed: 3
+  dashSpeed: 10
   animator: {fileID: 8842621403317436013}
 --- !u!114 &7787124467304503356
 MonoBehaviour:
@@ -211,7 +211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc0076f457bc8d54395b75142714e346, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 30
+  maxHealth: 20
   currentHealth: 100
   gm: {fileID: 0}
 --- !u!95 &8842621403317436013

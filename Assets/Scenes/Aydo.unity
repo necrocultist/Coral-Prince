@@ -7607,7 +7607,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1402945523}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 46.1, y: -8.67, z: 0}
+  m_LocalPosition: {x: 46.1, y: -7.28, z: 0}
   m_LocalScale: {x: 12.961279, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8110,6 +8110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   crew: {fileID: 0}
+  story: {fileID: 0}
 --- !u!4 &1473380868
 Transform:
   m_ObjectHideFlags: 0
@@ -11721,10 +11722,6 @@ PrefabInstance:
       propertyPath: gm
       value: 
       objectReference: {fileID: 1473380869}
-    - target: {fileID: 7787124467304503356, guid: 2f6ff447293f87c4ba2e5241a9f815fc, type: 3}
-      propertyPath: maxHealth
-      value: 20
-      objectReference: {fileID: 0}
     - target: {fileID: 7787124467304503358, guid: 2f6ff447293f87c4ba2e5241a9f815fc, type: 3}
       propertyPath: player
       value: 
