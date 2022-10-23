@@ -282,7 +282,7 @@ MonoBehaviour:
   agroRange: 4
   attackRange: 3
   moveSpeed: 1
-  dashSpeed: 3
+  dashSpeed: 6
 --- !u!114 &7787124467304503356
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -297,6 +297,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 100
+  gm: {fileID: 0}
 --- !u!95 &8842621403317436013
 Animator:
   serializedVersion: 4
@@ -307,7 +308,7 @@ Animator:
   m_GameObject: {fileID: 7787124467304503349}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d98c31507c7a8d44d9c303f1b510da52, type: 2}
+  m_Controller: {fileID: 9100000, guid: 99b00163c9fb88d47bc786f895711ee3, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

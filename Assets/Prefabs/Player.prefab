@@ -157,7 +157,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.043717146, y: -0.039194763}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.51809186, y: 0.49999982}
@@ -168,7 +168,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.9125657, y: 1.379887}
   m_EdgeRadius: 0
 --- !u!95 &1742904551691039800
 Animator:
@@ -229,8 +229,8 @@ MonoBehaviour:
   dashSpeed: 14
   distanceBetweenImages: 0.1
   dashCoolDown: 2.5
-  groundCheckDistance: 1.5
-  colliderOffset: {x: 0.48, y: 0, z: 0}
+  groundCheckDistance: 0.96
+  colliderOffset: {x: 0.42, y: 0, z: 0}
   groundCheckLayer:
     serializedVersion: 2
     m_Bits: 8
