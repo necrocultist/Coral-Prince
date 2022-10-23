@@ -63,7 +63,7 @@ Transform:
   m_GameObject: {fileID: 1742904551691039794}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.4736, z: 0}
-  m_LocalScale: {x: 1, y: 1.9472, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1742904553014208391}
@@ -111,13 +111,13 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: a4fb5e8f4c5a3cd458451913d05e402e, type: 3}
+  m_SortingOrder: 100
+  m_Sprite: {fileID: 517125936, guid: 3a9e1c94253bc6e469b20ef87eaa738f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 3.15, y: 2.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -160,9 +160,9 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.15, y: 2.5}
-    newSize: {x: 1, y: 1}
+    pivot: {x: 0.51809186, y: 0.49999982}
+    oldSize: {x: 1.03, y: 1.62}
+    newSize: {x: 3.15, y: 2.5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -202,15 +202,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d06fea2c52de4824faa7b9d5b6750dfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
-  currentHealth: 80
+  maxHealth: 200
+  currentHealth: 200
   enemyDamage: 20
-  playerDamage: 0
+  playerDamage: 50
   attackPoint: {fileID: 569898101}
   enemyLayer:
     serializedVersion: 2
     m_Bits: 128
   attackRange: 2
+  gm: {fileID: 0}
 --- !u!114 &1742904551691039803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -224,6 +225,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 7
+  dashTime: 0.2
+  dashSpeed: 14
+  distanceBetweenImages: 0.1
+  dashCoolDown: 2.5
   groundCheckDistance: 1.5
   colliderOffset: {x: 0.48, y: 0, z: 0}
   groundCheckLayer:
@@ -232,7 +237,6 @@ MonoBehaviour:
   jumpSpeed: 12
   jumpDelay: 0.1
   doubleJumpMode: 1
-  maxSpeed: 7
   linearDrag: 2
   gravity: 1
   fallMultiplier: 6
@@ -248,7 +252,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdfd73a0f53b7f747958d9d900067230, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arr: []
+  arr:
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &1742904553014208390
 GameObject:
   m_ObjectHideFlags: 0
