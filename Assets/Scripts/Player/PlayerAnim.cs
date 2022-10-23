@@ -9,8 +9,11 @@ public class PlayerAnim : MonoBehaviour
     private PlayerController controller;
     private Rigidbody2D rigidBody;
     private Animator animator;
-
-    //[SerializeField] private float speedAnimOffset;
+    [SerializeField] private AudioClip[] audioClips;
+    [SerializeField] private AudioSource jump;
+    [SerializeField] private AudioSource attack;
+    [SerializeField] private AudioSource dash;
+    [SerializeField] private AudioSource death;
 
     private void Awake()
     {
@@ -51,24 +54,32 @@ public class PlayerAnim : MonoBehaviour
 
     private void JumpAnim()
     {
+        jump.Play();
         animator.SetTrigger("Jump");
+        //SoundManager.Instance.PlaySound(audioClips[3]);
     }
     private void HitAnim()
     {
         animator.SetTrigger("TakeDamage");
+        //SoundManager.Instance.PlaySound(audioClips[0]);
     }
 
     private void DeathAnim()
     {
+        death.Play();
         animator.SetTrigger("Death");
+        //SoundManager.Instance.PlaySound(audioClips[2]);
     }
 
     private void AttackAnim()
     {
+        attack.Play();
         animator.SetTrigger("Attack");
     }
     private void DashAnim()
     {
+        dash.Play();
         animator.SetTrigger("Dash");
+        //SoundManager.Instance.PlaySound(audioClips[1]);
     }
 }
