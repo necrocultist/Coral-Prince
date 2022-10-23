@@ -1,21 +1,29 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using Cinemachine;
+using Newtonsoft.Json.Serialization;
 using UnityEngine;
 
 public class Teleporter : MonoBehaviour
 {
-    [SerializeField] private GameObject[] arr;
+    [SerializeField] GameObject camera;
+    private float wall;
+
+    private void Start()
+    {
+        wall = 8.56f;
+    }
+
     private void Update()
     {
-        if (transform.position.x > 9f && transform.position.x < 28.5f)
+        if (transform.position.x > wall)
         {
-            GameObject.Find("Main Camera").transform.position = new Vector3(arr[0].transform.position.x,0,-10);
-        }
-        else if (transform.position.x > 28f)
-        {
-            GameObject.Find("Main Camera").transform.position = new Vector3(arr[1].transform.position.x,0,-10);
+           
+            camera.transform.position += new Vector3( 17.77271f,0,0); 
+            wall += 17.77271f;
+            
         }
     }
 }
