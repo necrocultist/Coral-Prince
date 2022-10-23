@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator EndScene(GameObject go)
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1f);
         go.SetActive(true);
         yield return new WaitForSeconds(2);
         currentState = States.MainMenu;
